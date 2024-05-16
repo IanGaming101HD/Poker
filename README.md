@@ -1,1 +1,7 @@
 # Poker
+
+## Installation
+
+```
+    npm install
+```

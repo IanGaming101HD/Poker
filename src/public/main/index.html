@@ -1,27 +1,43 @@
 <!DOCTYPE html>
 
 <html>
-  <head>
-    <title>Poker</title>
-    <link rel='stylesheet' href='./public/main/style.css' />
-  </head>
-  <body>
-    <div class='container'>
-      <h1 class='centre'>Poker</h1>
-      <div class='game-container centre'>
-        <h1>Poker</h1>
-        <!-- <div id='popup-container' class='popup-container' hidden>
-          <div class='popup-head'>
-            <h2 id='popup-header' class='popup-header centre'>Game has ended!</h2>
-            <button id='close-button' class='close-button'>⨉</button>
-          </div>
-          <div class='popup-body'>
-            <p id='popup-paragraph' class='popup-paragraph'>$colour has won!</p>
-            <button id='continue-button' class='continue-button'>CONTINUE</button>
-          </div>
-        </div> -->
+
+<head>
+  <title>Poker</title>
+  <link rel='stylesheet' href='./public/main/style.css'>
+</head>
+
+<body>
+  <div class='container'>
+    <h1 class='header centre'>Poker</h1>
+    <div class='game-container centre'>
+      <div class='game-table'>
+        <div id='table' class='table'></div>
+        <div id='player-hand' class='player-hand hand'></div>
+        <div id='player-2-hand' class='player-2-hand hand'></div>
+        <div id='player-3-hand' class='player-3-hand hand'></div>
+        <div id='player-4-hand' class='player-4-hand hand'></div>
+        <div id='player-5-hand' class='player-5-hand hand'></div>
+        <div id='player-6-hand' class='player-6-hand hand'></div>
+      </div>
+      <div class='buttons'>
+        <button id='fold-button' class='fold-button button'>FOLD</button>
+        <button id='call-button' class='call-button button'>CALL</button>
+        <button id='raise-button' class='raise-button button'>RAISE</button>
+      </div>
+      <div id='popup-container' class='popup-container' hidden>
+        <div class='popup-head'>
+          <h2 id='popup-header' class='popup-header centre'>Game has ended!</h2>
+          <button id='close-button' class='close-button'>⨉</button>
+        </div>
+        <div class='popup-body'>
+          <p id='popup-paragraph' class='popup-paragraph'>$colour has won!</p>
+          <button id='continue-button' class='continue-button'>CONTINUE</button>
+        </div>
       </div>
     </div>
-    <script src='./public/main/script.js'></script>
-  </body>
+  </div>
+  <script src='./public/main/script.js'></script>
+</body>
+
 </html>

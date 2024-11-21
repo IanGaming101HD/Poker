@@ -2,6 +2,10 @@ html {
     font-family: sans-serif;
 }
 
+body {
+    background-color: #663300;
+}
+
 .centre {
     display: flex;
     flex-direction: row;
@@ -12,16 +16,31 @@ html {
 }
 
 .header {
-    font-size: 50px
+    color: #ffffff;
+    font-size: 50px;
+    /* -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: #000000; */
 }
 
 .game-container {
+    width: 50%;
+    height: 600px;
+    background-color: #663300;
+    display: flex;
+    flex-direction: column;
     border-style: solid;
     border-color: #000000;
-    border-width: 1px;
+    /* border-width: 1px; */
+    border-width: 0;
     border-radius: 0px;
-    width: 50%;
-    height: 750px;
+}
+
+.player-info {
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    color: #ffffff;
+    font-size: 20px;
     display: flex;
     flex-direction: column;
 }
@@ -41,23 +60,9 @@ html {
 }
 
 .table {
-    margin-top: 5%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    gap: 1%;
-}
-
-.player-2-hand {
-    margin-top: -30%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    gap: 1%;
-}
-
-.player-hand {
-    margin-top: 27.5%;
+    position: absolute;
+    top: 35%;
+    left: 41.5%;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -65,24 +70,67 @@ html {
 }
 
 .card {
-    /* position: relative; */
     border-radius: 5px;
-    width: 10%;
-    /* height: 5px; */
+    width: 75px;
+}
+
+.hand {
+    display: flex;
+    flex-direction: row;
+    gap: 2%;
+}
+
+.player-hand {
+    position: absolute;
+    top: 52.5%;
+    left: 47.5%;
+}
+
+.player-2-hand {
+    position: absolute;
+    top: 21%;
+    left: 47.5%;
+}
+
+.player-3-hand {
+    position: absolute;
+    top: 47.5%;
+    left: 27.5%;
+}
+
+.player-4-hand {
+    position: absolute;
+    top: 32.5%;
+    left: 27.5%;
+}
+
+.player-5-hand {
+    position: absolute;
+    top: 32.5%;
+    left: 64%;
+}
+
+.player-6-hand {
+    position: absolute;
+    top: 47.5%;
+    left: 64%;
 }
 
 .buttons {
+    position: absolute;
+    top: 72.5%;
+    left: 62.5%;
     display: flex;
     flex-direction: row;
     gap: 5%;
 }
 
-
 .button {
     cursor: pointer;
+    color: #ffffff;
+    background-color: #00000081;
     border-style: solid;
     border-width: 2px;
-    background-color: transparent;
     border-radius: 20px;
     padding: 1%;
     padding-left: 5%;

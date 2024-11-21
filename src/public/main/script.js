@@ -2,10 +2,10 @@ class Game {
   constructor() {
     this.deck = this.createDeck();
     this.hands = this.setupHands(6);
-    this.table = []
+    this.table = [];
     this.betAmount = 0;
 
-    this.startGame()
+    this.startGame();
   }
 
   createDeck() {
@@ -52,11 +52,11 @@ class Game {
   }
 
   setupHands(playerNums) {
-    let hands = {}
+    let hands = {};
     for (let x = 1; x <= playerNums; x++) {
-      hands[x === 1 ? `player` : `player-${x}`] = []
+      hands[x === 1 ? `player` : `player-${x}`] = [];
     }
-    return hands
+    return hands;
   }
 
   resetDecks() {
@@ -99,25 +99,24 @@ class Game {
 
   startGame() {
     this.resetDecks();
-    this.betAmount = 0;
 
     Object.keys(this.hands).forEach((player) => {
-        for (let i = 0; i < 2; i++) {
-            let card = this.deal();
-            this.hands[player].push(card);
-    
-            let cardElement = document.createElement('img');
-            cardElement.classList.add('card')
-            
-            if (player === 'player') {
-                cardElement.src = `./public/main/images/cards/${card}.png`;
-            } else {
-                cardElement.src = './public/main/images/cards/card-back.png';
-            }
-    
-            let handElement = document.getElementById(`${player}-hand`);
-            handElement.appendChild(cardElement);
+      for (let i = 0; i < 2; i++) {
+        let card = this.deal();
+        this.hands[player].push(card);
+
+        let cardElement = document.createElement('img');
+        cardElement.classList.add('card');
+
+        if (player === 'player') {
+          cardElement.src = `./public/main/images/cards/${card}.png`;
+        } else {
+          cardElement.src = './public/main/images/cards/card-back.png';
         }
+
+        let handElement = document.getElementById(`${player}-hand`);
+        handElement.appendChild(cardElement);
+      }
     });
 
     for (let i = 0; i < 5; i++) {
@@ -125,36 +124,32 @@ class Game {
       this.table.push(card);
 
       let cardElement = document.createElement('img');
-      cardElement.classList.add('card')
+      cardElement.classList.add('card');
       cardElement.src = './public/main/images/cards/card-back.png';
 
-      let tableElement = document.getElementById('table')
-      tableElement.appendChild(cardElement)
+      let tableElement = document.getElementById('table');
+      tableElement.appendChild(cardElement);
     }
 
-    console.log(this.hands, this.table)
+    initEvents();
+  }
 
-    // let userInput;
-    // while (!['check', 'call', 'c', 'raise', 'r', 'fold', 'f'].includes(userInput)) {
-    //   if (this.betAmount === 0) {
-    //     userInput = prompt('Would you like to check, raise, or fold?').toLowerCase();
-    //   } else {
-    //     userInput = prompt('Would you like to call, raise, or fold?').toLowerCase();
-    //   }
+  initEvents() {
+    let callButton = document.getElementById('call-button');
+    let raiseButton = document.getElementById('raise-button');
+    let foldButton = document.getElementById('fold-button');
 
-    //   if (['check', 'call', 'c'].includes(userInput)) {
-    //     this.call();
-    //   } else if (['raise', 'r'].includes(userInput)) {
-    //     this.raiseBet();
-    //   } else if (['fold', 'f'].includes(userInput)) {
-    //     this.fold('Player');
-    //     break;
-    //   } else {
-    //     console.log('Please enter a valid input!');
-    //   }
-    // }
+    callButton.addEventListener('click', (event) => {
+      this.call();
+    });
 
-    // this.playAgain();
+    raiseButton.addEventListener('click', (event) => {
+      this.raise();
+    });
+
+    foldButton.addEventListener('click', (event) => {
+      this.fold();
+    });
   }
 }
 
